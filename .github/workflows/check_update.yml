@@ -24,7 +24,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install google-generativeai requests
+          python -m pip install --upgrade pip
+          pip install google-genai requests  # 確保這裡有安裝 google-genai
 
       - name: Run Monitor Script
         env:
