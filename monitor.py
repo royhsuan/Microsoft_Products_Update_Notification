@@ -44,9 +44,7 @@ def run_monitor():
         if 'ai_resp' in locals():
             print(f"AI 回傳內容: {ai_resp.text}")
         raise  # 讓 GitHub Action 捕捉到錯誤並顯示 Exit Code 1
-    
-    new_data = json.loads(ai_resp.text)
-    
+        
     # 5. 更新狀態檔案
     new_data["sha"] = current_sha
     with open(STATE_FILE, 'w', encoding='utf-8') as f:
