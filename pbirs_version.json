@@ -1,0 +1,355 @@
+[
+    {
+        "version": "1.25.9558.32914 (build 15.0.1120.122)",
+        "release_date": "March 5, 2026",
+        "report_server_updates": [
+            "Fixed issue where Power BI reports with RLS get stuck spinning."
+        ],
+        "desktop_updates": [],
+        "download_url": null,
+        "sha": "6d16d468a6c0cebd457e219bc4984331b168a4b6"
+    },
+    {
+        "version": "1.25.9557.12652 (build 15.0.1120.121)",
+        "release_date": "March 3, 2026",
+        "report_server_updates": [
+            "Versioned release."
+        ],
+        "desktop_updates": [],
+        "download_url": null
+    },
+    {
+        "version": "2.147.5030.0 (September 2025)",
+        "release_date": "March 2, 2026",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Fix issue for recent Local Network Access restrictions."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "2.143.4379.0 (May 2025)",
+        "release_date": "March 2, 2026",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Fix issue for recent Local Network Access restrictions."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.25.9552.1669 (build 15.0.1120.119)",
+        "release_date": "February 25, 2026",
+        "report_server_updates": [
+            "Fixed issue where certain types of Power BI Reports lead to excessive crash dumps being created."
+        ],
+        "desktop_updates": [],
+        "download_url": null
+    },
+    {
+        "version": "1.24.9466.3830 (build 15.0.1119.121)",
+        "release_date": "December 1, 2025",
+        "report_server_updates": [
+            "Added support for SQL Server 2025 Product IDs (keys).",
+            "Added telemetry and changed error code when Power BI Desktop for RS uploads a file that's too large.",
+            "Added telemetry and changed error code when Power BI Desktop for RS uploads a file that's for a newer Desktop release."
+        ],
+        "desktop_updates": [],
+        "download_url": null
+    },
+    {
+        "version": "2.143.4379.0 (May 2025)",
+        "release_date": "October 6, 2025",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Security updates"
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.24.9392.34333 (build 15.0.1119.107)",
+        "release_date": "September 22, 2025",
+        "report_server_updates": [
+            "Fixed issue where custom authentication didn't re-authenticate upon cookie expiration",
+            "Fixed issue with exporting Power BI visual to excel caused an error",
+            "Resolved several accessibility issues",
+            "Custom Visual API shipped with release - version v5.10.0",
+            "Security updates"
+        ],
+        "desktop_updates": [
+            "Support for September 2025 Power BI Report Server."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.25.9508.3237 (build 15.0.1120.113)",
+        "release_date": "January 21, 2026",
+        "report_server_updates": [
+            "Added support for SQL Server 2025 Enterprise Core Product ID (key).",
+            "Add new advanced server property 'DisableMSRBConnect' with default value 'True'. This to restricts \"Connected mode\" requests from Microsoft Report Builder.",
+            "Fixed issue with verbose logging causing log file to grow too fast.",
+            "Removed support for Office Online Server (OOS) which allowed web viewing of XLSX workbooks which has been deprecated.",
+            "Accessibility fixes."
+        ],
+        "desktop_updates": [
+            "Support for January 2026 Power BI Report Server."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.23.9316.13987 (build 15.0.1118.134)",
+        "release_date": "July 9, 2025",
+        "report_server_updates": [
+            "Fixed issue with document map not expanding when viewing paginated reports."
+        ],
+        "desktop_updates": [
+            "Fix issue with intermittent crashes when using Oracle data in reports."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.20.8959.12285 (build 15.0.1115.206)",
+        "release_date": "July 12, 2024",
+        "report_server_updates": [
+            "Fixed issue with custom visuals failing to load initially in Power BI reports.",
+            "Fixed issue with not applying styles to Matrix visuals in certain Power BI reports.",
+            "Fixed issue when editing monthly schedules in the PBIRS portal."
+        ],
+        "desktop_updates": [
+            "Fixed issue with measures not appearing in PBIT with certain data sources.",
+            "Fixed issue with direct connect reports causing issues in Power BI Desktop for RS."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.23.9274.14406 (build 15.0.1118.126)",
+        "release_date": "May 27, 2025",
+        "report_server_updates": [
+            "Fixed issue with showing schedule refresh on reports to users that don't have ’Manage individual subscriptions‘ and ’Manage all subscriptions‘ permissions."
+        ],
+        "desktop_updates": [],
+        "download_url": null
+    },
+    {
+        "version": "1.23.9273.4705 (build 15.0.1118.125)",
+        "release_date": "May 22, 2025",
+        "report_server_updates": [
+            "Add new advanced server property EnableCommentsOnReports and set default value to false to control comments on reports. This will disable comments on upgrade and must be enabled if you wish to have the ability to comment on reports in the future. This feature is now considered deprecated and will be removed in 2026.",
+            "Custom Visual API shipped with release - version v5.10.0",
+            "Updated underlying version of jQuery to 3.7.1 used for PBIRS Portal and RDL rendering (PBIX still uses 3.5.1 and is aligned with Power BI service version).",
+            "Support for x-forwarded-for header logging IP address in RSPortal log.",
+            "Added support for migrating report server catalog from SSRS 2022 to Power BI Report Server.",
+            "Fixed issue with models loading in scale out environment.",
+            "Fixed issue with comments \"--\" in DAX queries.",
+            "Fixed issue where subscriptions could be saved before all content loaded, thus removing settings",
+            "Check to see if data source supports encryption before enabling encryption settings in the UI.",
+            "Additional verbose logging to help support cases",
+            "Additional screen reader support for the tree view."
+        ],
+        "desktop_updates": [
+            "Support for May 2025 Power BI Report Server."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.22.9153.7886 (build 15.0.1117.98)",
+        "release_date": "January 22, 2025",
+        "report_server_updates": [
+            "Fixed issue with new property 'EnableCustomURLInKPI' not getting configured correctly during upgrade. In the previous build (15.0.1117.95), Publisher and Content Manager roles would not have the new property set to a value and would get a permission error when accessing the /reports endpoint."
+        ],
+        "desktop_updates": [],
+        "download_url": null
+    },
+    {
+        "version": "1.22.9137.4867 (build 15.0.1117.95)",
+        "release_date": "January 13, 2025",
+        "report_server_updates": [
+            "Custom Visual API shipped with release - version v5.10.0",
+            "Updated underlying version of angular.",
+            "Add new advanced server property EnableRefererValidation and set default value to false.",
+            "Add new advanced server property 'EnableCustomURLInKPI' with default value 'true' to control if KPIs can link to custom URLs.",
+            "Added support for PBIX data limit feature.",
+            "Fixed issue with RSExecRole not getting correct permissions when restoring a catalog.",
+            "Fixed issue with logging errors for snapshots getting cleaned up.",
+            "Fixed issue where we logged error about perf counters which were removed previously.",
+            "Fixed issue with performance of data driven email subscriptions.",
+            "Fixed issue related to changing service account password in the RSConfig tool.",
+            "Fixed issue related to viewing PBIX reports when the underlying model had been unloaded.",
+            "Fixed issue related to accessibility and screen readers."
+        ],
+        "desktop_updates": [
+            "Support for January 2025 Power BI Report Server."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.21.9032.4573 (build 15.0.1116.121)",
+        "release_date": "September 26, 2024",
+        "report_server_updates": [
+            "Custom Visual API shipped with release - version v5.10.0",
+            "Changed default SupportedHyperlinkSchemes advanced server property value to disallow JavaScript",
+            "Changed default TrustedFileFormat advanced server property value to disallow pdf content viewing",
+            "Fixed issue with RsPortal log getting filled with 401 errors",
+            "Fixed issue with folders containing certain characters",
+            "Fixed issue with history snapshot page",
+            "Fixed issue with managing shared data sources",
+            "Fixed issue with ribbon charts in Power BI Reports"
+        ],
+        "desktop_updates": [
+            "Support for September 2024 Power BI Report Server."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.20.8944.34536 (build 15.0.1115.194)",
+        "release_date": "June 27, 2024",
+        "report_server_updates": [
+            "Fixed issue related to exporting reports with images to Excel."
+        ],
+        "desktop_updates": [],
+        "download_url": null
+    },
+    {
+        "version": "1.20.8926.40580 (build 15.0.1115.178)",
+        "release_date": "June 10, 2024",
+        "report_server_updates": [
+            "Fixed issue related to Office Online Server (OOS) not working as expected."
+        ],
+        "desktop_updates": [],
+        "download_url": null
+    },
+    {
+        "version": "1.20.8910.25479 (build 15.0.1115.165)",
+        "release_date": "May 28, 2024",
+        "report_server_updates": [
+            "Removed AngularJS remnants",
+            "A recent security change requires a privileged user to apply the \"PBI_SQL_TRUSTED_SERVERS\" environment variable on their Power BI Report Server machine for certain data types. Read more details in the article, [SQL Server certificate isn't trusted on the client](/power-query/connectors/sql-server#sql-server-certificate-isnt-trusted-on-the-client-power-bi-desktop-or-on-premises-data-gateway).",
+            "Custom Visual API shipped with release - version v5.8.0",
+            "Various bug fixes"
+        ],
+        "desktop_updates": [
+            "Support for many new visuals",
+            "Updated snowflake connector support"
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.19.8779.19175 (build 15.0.1114.33)",
+        "release_date": "January 26, 2024",
+        "report_server_updates": [
+            "Support for many-to-many cardinality in Power BI reports",
+            "Custom Visual API shipped with release - version v5.7.0",
+            "Fixed an issue with invisible Download and Reload buttons for Excel workbooks",
+            "Fixed an issue with NULL value in CC field breaking a data-driven email subscription"
+        ],
+        "desktop_updates": [],
+        "download_url": null
+    },
+    {
+        "version": "1.23.9273.4705 (May 2025)",
+        "release_date": "May 22, 2025",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Support for May 2025 Power BI Report Server."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.22.9137.4867 (January 2025)",
+        "release_date": "January 13, 2025",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Support for January 2025 Power BI Report Server."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.21.9032.4573 (September 2024)",
+        "release_date": "September 26, 2024",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Support for September 2024 Power BI Report Server."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.20.8959.12285 (May 2024)",
+        "release_date": "July 12, 2024",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Fixed issue with measures not appearing in PBIT with certain data sources.",
+            "Fixed issue with direct connect reports causing issues in Power BI Desktop for RS."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.20.8910.25479 (May 2024)",
+        "release_date": "May 28, 2024",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Support for many new visuals",
+            "Updated snowflake connector support"
+        ],
+        "download_url": null
+    },
+    {
+        "version": "1.19.8779.19175 (January 2024)",
+        "release_date": "January 26, 2024",
+        "report_server_updates": [],
+        "desktop_updates": [],
+        "download_url": null
+    },
+    {
+        "version": "2.138.6828.0 (January 2025)",
+        "release_date": "July 9, 2025",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Fix issue with intermittent crashes when using Oracle data in reports."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "2.136.3279.0 (September 2024)",
+        "release_date": "January 7, 2025",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Fix for WebView2 issue."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "2.129.6228.0 (May 2024)",
+        "release_date": "January 7, 2025",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Fix for WebView2 issue."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "2.129.2203.0 (May 2024)",
+        "release_date": "July 12, 2024",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Fixed issue with measures not appearing in PBIT with certain data sources.",
+            "Fixed issue with direct connect reports causing issues in Power BI Desktop for RS."
+        ],
+        "download_url": null
+    },
+    {
+        "version": "2.129.1127.0 (May 2024)",
+        "release_date": "May 28, 2024",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "Support for many new visuals",
+            "Updated snowflake connector support"
+        ],
+        "download_url": null
+    },
+    {
+        "version": "2.124.1960.0 (January 2024)",
+        "release_date": "January 26, 2024",
+        "report_server_updates": [],
+        "desktop_updates": [],
+        "download_url": null
+    }
+]
