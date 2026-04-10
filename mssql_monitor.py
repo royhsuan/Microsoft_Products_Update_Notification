@@ -67,7 +67,7 @@ def run_sql_monitor():
         """
         
         response = client.models.generate_content(
-            model='gemini-2.0-flash', # 建議使用 2.0-flash 兼顧速度與額度
+            model='gemini-2.5-flash-lite', # 建議使用 2.0-flash 兼顧速度與額度
             contents=prompt,
             config=types.GenerateContentConfig(response_mime_type='application/json', temperature=0.0)
         )
