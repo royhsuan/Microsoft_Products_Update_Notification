@@ -74,7 +74,7 @@ def run_sql_monitor():
         """
         
         response = client.models.generate_content(
-            model='gemini-2.0-flash',
+            model='gemini-2.5-flash-lite',
             contents=prompt,
             config=types.GenerateContentConfig(response_mime_type='application/json', temperature=0.0)
         )
