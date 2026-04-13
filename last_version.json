@@ -1,6 +1,0 @@
-{
-    "version": "1.25.9558.32914 (build 15.0.1120.122)",
-    "release_date": "March 5, 2026",
-    "description": "Fixed issue where Power BI reports with RLS get stuck spinning.",
-    "sha": "6d16d468a6c0cebd457e219bc4984331b168a4b6"
-}
