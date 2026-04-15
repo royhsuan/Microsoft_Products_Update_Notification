@@ -46,6 +46,21 @@
         "download_url": null
     },
     {
+        "version": "1.25.9508.3237 (build 15.0.1120.113)",
+        "release_date": "January 21, 2026",
+        "report_server_updates": [
+            "Added support for SQL Server 2025 Enterprise Core Product ID (key).",
+            "Add new advanced server property 'DisableMSRBConnect' with default value 'True'. This to restricts \"Connected mode\" requests from Microsoft Report Builder.",
+            "Fixed issue with verbose logging causing log file to grow too fast.",
+            "Removed support for Office Online Server (OOS) which allowed web viewing of XLSX workbooks which has been deprecated.",
+            "Accessibility fixes."
+        ],
+        "desktop_updates": [
+            "Support for January 2026 Power BI Report Server."
+        ],
+        "download_url": null
+    },
+    {
         "version": "1.24.9466.3830 (build 15.0.1119.121)",
         "release_date": "December 1, 2025",
         "report_server_updates": [
@@ -77,21 +92,6 @@
         ],
         "desktop_updates": [
             "Support for September 2025 Power BI Report Server."
-        ],
-        "download_url": null
-    },
-    {
-        "version": "1.25.9508.3237 (build 15.0.1120.113)",
-        "release_date": "January 21, 2026",
-        "report_server_updates": [
-            "Added support for SQL Server 2025 Enterprise Core Product ID (key).",
-            "Add new advanced server property 'DisableMSRBConnect' with default value 'True'. This to restricts \"Connected mode\" requests from Microsoft Report Builder.",
-            "Fixed issue with verbose logging causing log file to grow too fast.",
-            "Removed support for Office Online Server (OOS) which allowed web viewing of XLSX workbooks which has been deprecated.",
-            "Accessibility fixes."
-        ],
-        "desktop_updates": [
-            "Support for January 2026 Power BI Report Server."
         ],
         "download_url": null
     },
