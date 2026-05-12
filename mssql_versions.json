@@ -2,6 +2,24 @@
     "SQL Server 2025": [
         {
             "product": "SQL Server 2025",
+            "full_label": "CU4 + GDR",
+            "version": "17.0.4040.1",
+            "release_date": "May 12, 2026",
+            "kb_article": "KB5089899",
+            "support_status": "Latest",
+            "_captured_at": "2026-05-13 02:20:11"
+        },
+        {
+            "product": "SQL Server 2025",
+            "full_label": "GDR",
+            "version": "17.0.1115.1",
+            "release_date": "May 12, 2026",
+            "kb_article": "KB5091223",
+            "support_status": "Latest",
+            "_captured_at": "2026-05-13 02:20:11"
+        },
+        {
+            "product": "SQL Server 2025",
             "full_label": "CU4 for 2025",
             "version": "17.0.4035.5",
             "release_date": "April 16, 2026",
@@ -92,6 +110,24 @@
         }
     ],
     "SQL Server 2022": [
+        {
+            "product": "SQL Server 2022",
+            "full_label": "CU24 + GDR",
+            "version": "16.0.4252.3",
+            "release_date": "May 12, 2026",
+            "kb_article": "KB5089900",
+            "support_status": "Latest",
+            "_captured_at": "2026-05-13 02:20:11"
+        },
+        {
+            "product": "SQL Server 2022",
+            "full_label": "GDR",
+            "version": "16.0.1180.1",
+            "release_date": "May 12, 2026",
+            "kb_article": "KB5091158",
+            "support_status": "Latest",
+            "_captured_at": "2026-05-13 02:20:11"
+        },
         {
             "product": "SQL Server 2022",
             "full_label": "CU24 + GDR",
@@ -331,6 +367,24 @@
         {
             "product": "SQL Server 2019",
             "full_label": "CU32 + GDR",
+            "version": "15.0.4470.1",
+            "release_date": "May 2026",
+            "kb_article": "KB5090407",
+            "support_status": "Latest",
+            "_captured_at": "2026-05-13 02:20:11"
+        },
+        {
+            "product": "SQL Server 2019",
+            "full_label": "GDR",
+            "version": "15.0.2170.1",
+            "release_date": "May 2026",
+            "kb_article": "KB5090408",
+            "support_status": "Latest",
+            "_captured_at": "2026-05-13 02:20:11"
+        },
+        {
+            "product": "SQL Server 2019",
+            "full_label": "CU32 + GDR",
             "version": "15.0.4465.1",
             "release_date": "April 2026",
             "kb_article": "KB5084816",
@@ -375,6 +429,24 @@
         }
     ],
     "SQL Server 2017": [
+        {
+            "product": "SQL Server 2017",
+            "full_label": "CU31 + GDR",
+            "version": "14.0.3530.2",
+            "release_date": "May 2026",
+            "kb_article": "KB5090354",
+            "support_status": "Latest",
+            "_captured_at": "2026-05-13 02:20:11"
+        },
+        {
+            "product": "SQL Server 2017",
+            "full_label": "GDR",
+            "version": "14.0.2110.2",
+            "release_date": "May 2026",
+            "kb_article": "KB5090347",
+            "support_status": "Latest",
+            "_captured_at": "2026-05-13 02:20:11"
+        },
         {
             "product": "SQL Server 2017",
             "full_label": "CU31 + GDR",
@@ -431,6 +503,24 @@
         }
     ],
     "SQL Server 2016": [
+        {
+            "product": "SQL Server 2016",
+            "full_label": "GDR for Azure Connect pack",
+            "version": "13.0.7085.1",
+            "release_date": "May 2026",
+            "kb_article": "KB5089270",
+            "support_status": "Latest",
+            "_captured_at": "2026-05-13 02:20:11"
+        },
+        {
+            "product": "SQL Server 2016",
+            "full_label": "GDR for SP3",
+            "version": "13.0.6490.1",
+            "release_date": "May 2026",
+            "kb_article": "KB5089271",
+            "support_status": "Latest",
+            "_captured_at": "2026-05-13 02:20:11"
+        },
         {
             "product": "SQL Server 2016",
             "full_label": "GDR for Azure Connect pack",
@@ -864,8 +954,8 @@
         }
     ],
     "_metadata": {
-        "sha": "cfd3e24b3909d4adb54dba2cd3e9ebd033b92354",
-        "last_checked": "2026-05-12 18:55:20",
+        "sha": "0910230b196b92a69f6555c61fd1f245295e46e7",
+        "last_checked": "2026-05-13 02:20:11",
         "sort_logic": "Date desc, Version desc"
     }
 }
