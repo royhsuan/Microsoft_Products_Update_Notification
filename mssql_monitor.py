@@ -32,7 +32,7 @@ def run_sql_monitor():
     now_ts = datetime.datetime.now(tz_tw)
     now = now_ts.strftime("%Y-%m-%d %H:%M:%S")
     
-    print(f"[{now}] === 啟動 MSSQL 監控 (日期排序 + 容錯強化版) ===")
+    print(f"[{now}] === 啟動 MSSQL 監控 (僅在有新版本時更新檔案) ===")
 
     try:
         # 1. 抓取微軟官方文件
@@ -51,12 +51,9 @@ def run_sql_monitor():
                 db = json.load(f)
             if isinstance(db, list): db = {} 
 
-        # 3. SHA 比對
+        # 3. SHA 比對 - 若 SHA 相同，代表微軟文件根本沒變，直接結束 (不碰 STATE_FILE)
         if db.get("_metadata", {}).get("sha") == current_sha:
-            print(f"[{now}] SHA 未變動，僅更新檢查時間。")
-            db["_metadata"]["last_checked"] = now
-            with open(STATE_FILE, 'w', encoding='utf-8') as f:
-                json.dump(db, f, indent=4, ensure_ascii=False)
+            print(f"[{now}] SHA 未變動，無需執行任何更新。")
             return
 
         # 4. 呼叫 Gemini 解析
@@ -98,30 +95,35 @@ def run_sql_monitor():
                 db[p_name].append(entry)
                 update_count += 1
 
-        # 6. 強制排序邏輯 (修復 AttributeError)
-        for p_name in list(db.keys()):
-            if p_name == "_metadata": continue
-            
-            db[p_name].sort(
-                key=lambda x: (
-                    parse_ms_date(x.get("release_date")),
-                    # 關鍵修復：(x.get("version") or "0") 確保不會對 None 進行 split
-                    [int(d) if d.isdigit() else 0 for d in (x.get("version") or "0").split('.')]
-                ),
-                reverse=True
-            )
+        # 6. 判斷是否寫入檔案 (關鍵修改點)
+        # 只有在 update_count > 0 時，才更新 metadata 排序並寫入檔案
+        if update_count > 0:
+            # 強制排序邏輯
+            for p_name in list(db.keys()):
+                if p_name == "_metadata": continue
+                
+                db[p_name].sort(
+                    key=lambda x: (
+                        parse_ms_date(x.get("release_date")),
+                        [int(d) if d.isdigit() else 0 for d in (x.get("version") or "0").split('.')]
+                    ),
+                    reverse=True
+                )
 
-        # 7. Metadata 與存檔
-        db["_metadata"] = {
-            "sha": current_sha,
-            "last_checked": now,
-            "sort_logic": "Date desc, Version desc"
-        }
+            # 更新標記：此時的 last_checked 代表「真正捕獲到新資料的時間」
+            db["_metadata"] = {
+                "sha": current_sha,
+                "last_checked": now,
+                "sort_logic": "Date desc, Version desc"
+            }
 
-        with open(STATE_FILE, 'w', encoding='utf-8') as f:
-            json.dump(db, f, indent=4, ensure_ascii=False)
-            
-        print(f"[{now}] 執行成功。已完成日期排序，本次新增 {update_count} 筆。")
+            with open(STATE_FILE, 'w', encoding='utf-8') as f:
+                json.dump(db, f, indent=4, ensure_ascii=False)
+                
+            print(f"[{now}] 檢測到新資料！已完成日期排序與存檔，本次新增 {update_count} 筆。")
+        else:
+            # 雖然微軟文件的 SHA 變了（可能只是改了錯字或無關更新），但裡面沒有我們需要的全新 MSSQL 版本 Build 號
+            print(f"[{now}] 雖然 SHA 改變，但解析後未發現全新 SQL 版本資料，放棄寫入檔案。")
 
     except Exception as e:
         print(f"[{now}] 執行中斷，錯誤原因: {str(e)}")
