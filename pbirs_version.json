@@ -1,338 +1,343 @@
 [
     {
+        "version": "1.26.9663.10539 (build 15.0.1121.115)",
+        "release_date": "June 12, 2026",
+        "report_server_updates": [
+            "修正了在重新整理後顯示舊資料的擴展環境問題。",
+            "修正了 Power BI 進階按鈕切片視覺效果未如預期運作的問題。"
+        ],
+        "desktop_updates": [],
+        "download_url": "",
+        "sha": "5f069fa90e0dbee6db02b82408003bb4d10a1d8a"
+    },
+    {
+        "version": "2.154.956.0 (May 2026)",
+        "release_date": "May 21, 2026",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "新增對 May 2026 Power BI Report Server 的支援"
+        ],
+        "download_url": ""
+    },
+    {
         "version": "1.26.9637.31070 (build 15.0.1121.109)",
         "release_date": "May 21, 2026",
         "report_server_updates": [
-            "Added support for card visual",
-            "Fixed issue for Power BI Reports containing report slicers",
-            "Fixed issue with time displayed for schedule start and end times",
-            "Fixed for duplicate schedule being added to Report Server catalog",
-            "Fixed accessibility bugs"
+            "新增對卡片視覺效果的支援",
+            "修正了包含報表切片器的 Power BI 報表問題",
+            "修正了排程開始和結束時間顯示的時間問題",
+            "修正了重複排程新增到報表伺服器目錄的問題",
+            "修正了無障礙功能錯誤"
         ],
-        "desktop_updates": [
-            "Added support for May 2026 Power BI Report Server"
-        ],
-        "download_url": null,
-        "sha": "196c6b829b98e617afbed8941c518faa614abc01"
-    },
-    {
-        "version": "2.150.5353.0 (January 2026)",
-        "release_date": "June 11, 2026",
-        "report_server_updates": [],
-        "desktop_updates": [
-            "Updated authentication library with the latest security patches."
-        ],
-        "download_url": null
-    },
-    {
-        "version": "2.147.7627.0 (September 2025)",
-        "release_date": "June 11, 2026",
-        "report_server_updates": [],
-        "desktop_updates": [
-            "Updated authentication library with the latest security patches."
-        ],
-        "download_url": null
+        "desktop_updates": [],
+        "download_url": ""
     },
     {
         "version": "1.25.9558.32914 (build 15.0.1120.122)",
         "release_date": "March 5, 2026",
         "report_server_updates": [
-            "Fixed issue where Power BI reports with RLS get stuck spinning."
+            "修正了具有 RLS 的 Power BI 報表卡住旋轉的問題。"
         ],
         "desktop_updates": [],
-        "download_url": null
+        "download_url": ""
     },
     {
         "version": "1.25.9557.12652 (build 15.0.1120.121)",
         "release_date": "March 3, 2026",
         "report_server_updates": [
-            "Versioned release."
+            "版本發行。"
         ],
         "desktop_updates": [],
-        "download_url": null
+        "download_url": ""
     },
     {
         "version": "2.143.4379.0 (May 2025)",
         "release_date": "March 2, 2026",
         "report_server_updates": [],
         "desktop_updates": [
-            "Fix issue for recent Local Network Access restrictions."
+            "修正了近期本機網路存取限制問題。"
         ],
-        "download_url": null
+        "download_url": ""
     },
     {
         "version": "2.147.5030.0 (September 2025)",
         "release_date": "March 2, 2026",
         "report_server_updates": [],
         "desktop_updates": [
-            "Fix issue for recent Local Network Access restrictions."
+            "修正了近期本機網路存取限制問題。"
         ],
-        "download_url": null
+        "download_url": ""
     },
     {
         "version": "1.25.9552.1669 (build 15.0.1120.119)",
         "release_date": "February 25, 2026",
         "report_server_updates": [
-            "Fixed issue where certain types of Power BI Reports lead to excessive crash dumps being created."
+            "修正了某些類型的 Power BI 報表導致產生過多當機傾印的問題。"
         ],
         "desktop_updates": [],
-        "download_url": null
+        "download_url": ""
     },
     {
-        "version": "1.24.9466.3830 (build 15.0.1119.121)",
-        "release_date": "December 1, 2025",
+        "version": "1.25.9508.3237 (build 15.0.1120.113)",
+        "release_date": "January 21, 2026",
         "report_server_updates": [
-            "Added support for SQL Server 2025 Product IDs (keys).",
-            "Added telemetry and changed error code when Power BI Desktop for RS uploads a file that's too large.",
-            "Added telemetry and changed error code when Power BI Desktop for RS uploads a file that's for a newer Desktop release."
+            "新增對 SQL Server 2025 Enterprise Core Product ID (金鑰) 的支援。",
+            "新增新的進階伺服器屬性 'DisableMSRBConnect'，預設值為 'True'。這會限制 Microsoft Report Builder 的「連線模式」要求。",
+            "修正了詳細記錄導致記錄檔增長過快的問題。",
+            "移除對 Office Online Server (OOS) 的支援，該支援允許檢視已淘汰的 XLSX 工作簿。[深入了解](https://techcommunity.microsoft.com/blog/officeeos/announcing-the-retirement-for-office-online-server/4462402)",
+            "無障礙功能修正。"
         ],
         "desktop_updates": [],
-        "download_url": null
-    },
-    {
-        "version": "2.143.4379.0 (May 2025)",
-        "release_date": "October 6, 2025",
-        "report_server_updates": [],
-        "desktop_updates": [
-            "Security updates"
-        ],
-        "download_url": null
-    },
-    {
-        "version": "1.23.9316.13987 (build 15.0.1118.134)",
-        "release_date": "July 9, 2025",
-        "report_server_updates": [
-            "Bug fixes",
-            "Fixed issue with document map not expanding when viewing paginated reports."
-        ],
-        "desktop_updates": [
-            "Fix issue with intermittent crashes when using Oracle data in reports."
-        ],
-        "download_url": null
-    },
-    {
-        "version": "1.23.9274.14406 (build 15.0.1118.126)",
-        "release_date": "May 27, 2025",
-        "report_server_updates": [
-            "Bug fixes",
-            "Fixed issue with showing schedule refresh on reports to users that don't have ’Manage individual subscriptions‘ and ’Manage all subscriptions‘ permissions."
-        ],
-        "desktop_updates": [],
-        "download_url": null
-    },
-    {
-        "version": "1.23.9273.4705 (build 15.0.1118.125)",
-        "release_date": "May 22, 2025",
-        "report_server_updates": [
-            "Features",
-            "Add new advanced server property EnableCommentsOnReports and set default value to false to control comments on reports. This will disable comments on upgrade and must be enabled if you wish to have the ability to comment on reports in the future. This feature is now considered deprecated and will be removed in 2026.",
-            "Custom Visual API shipped with release - version v5.10.0",
-            "Updated underlying version of jQuery to 3.7.1 used for PBIRS Portal and RDL rendering (PBIX still uses 3.5.1 and is aligned with Power BI service version).",
-            "Support for x-forwarded-for header logging IP address in RSPortal log.",
-            "Added support for migrating report server catalog from SSRS 2022 to Power BI Report Server.",
-            "Bug fixes",
-            "Fixed issue with models loading in scale out environment.",
-            "Fixed issue with comments \"--\" in DAX queries.",
-            "Fixed issue where subscriptions could be saved before all content loaded, thus removing settings",
-            "Check to see if data source supports encryption before enabling encryption settings in the UI.",
-            "Additional verbose logging to help support cases",
-            "Additional screen reader support for the tree view."
-        ],
-        "desktop_updates": [
-            "Support for May 2025 Power BI Report Server."
-        ],
-        "download_url": null
-    },
-    {
-        "version": "1.22.9153.7886 (build 15.0.1117.98)",
-        "release_date": "January 22, 2025",
-        "report_server_updates": [
-            "Bug fixes",
-            "Fixed issue with new property 'EnableCustomURLInKPI' not getting configured correctly during upgrade. In the previous build (15.0.1117.95), Publisher and Content Manager roles would not have the new property set to a value and would get a permission error when accessing the /reports endpoint."
-        ],
-        "desktop_updates": [],
-        "download_url": null
-    },
-    {
-        "version": "1.22.9137.4867 (build 15.0.1117.95)",
-        "release_date": "January 13, 2025",
-        "report_server_updates": [
-            "Features",
-            "Custom Visual API shipped with release - version v5.10.0",
-            "Updated underlying version of angular.",
-            "Add new advanced server property EnableRefererValidation and set default value to false.",
-            "Add new advanced server property 'EnableCustomURLInKPI' with default value 'true' to control if KPIs can link to custom URLs.",
-            "Added support for PBIX data limit feature.",
-            "Bug fixes",
-            "Fixed issue with RSExecRole not getting correct permissions when restoring a catalog.",
-            "Fixed issue with logging errors for snapshots getting cleaned up.",
-            "Fixed issue where we logged error about perf counters which were removed previously.",
-            "Fixed issue with performance of data driven email subscriptions.",
-            "Fixed issue related to changing service account password in the RSConfig tool.",
-            "Fixed issue related to viewing PBIX reports when the underlying model had been unloaded.",
-            "Fixed issue related to accessibility and screen readers."
-        ],
-        "desktop_updates": [
-            "Support for January 2025 Power BI Report Server."
-        ],
-        "download_url": null
-    },
-    {
-        "version": "2.136.3279.0 (September 2024)",
-        "release_date": "January 7, 2025",
-        "report_server_updates": [],
-        "desktop_updates": [
-            "Fix for WebView2 issue."
-        ],
-        "download_url": null
-    },
-    {
-        "version": "1.21.9032.4573 (build 15.0.1116.121)",
-        "release_date": "September 26, 2024",
-        "report_server_updates": [
-            "Features",
-            "Custom Visual API shipped with release - version v5.10.0",
-            "Changed default SupportedHyperlinkSchemes advanced server property value to disallow JavaScript",
-            "Changed default TrustedFileFormat advanced server property value to disallow pdf content viewing",
-            "Bug fixes",
-            "Fixed issue with RsPortal log getting filled with 401 errors",
-            "Fixed issue with folders containing certain characters",
-            "Fixed issue with history snapshot page",
-            "Fixed issue with managing shared data sources",
-            "Fixed issue with ribbon charts in Power BI Reports"
-        ],
-        "desktop_updates": [
-            "Support for September 2024 Power BI Report Server."
-        ],
-        "download_url": null
-    },
-    {
-        "version": "1.20.8959.12285 (build 15.0.1115.206)",
-        "release_date": "July 12, 2024",
-        "report_server_updates": [
-            "Bug fixes",
-            "Fixed issue with custom visuals failing to load initially in Power BI reports.",
-            "Fixed issue with not applying styles to Matrix visuals in certain Power BI reports.",
-            "Fixed issue when editing monthly schedules in the PBIRS portal."
-        ],
-        "desktop_updates": [
-            "Bug fixes",
-            "Fixed issue with measures not appearing in PBIT with certain data sour"
-        ],
-        "download_url": null
-    },
-    {
-        "version": "1.20.8944.34536 (build 15.0.1115.194)",
-        "release_date": "June 27, 2024",
-        "report_server_updates": [
-            "Bug fixes",
-            "Fixed issue related to exporting reports with images to Excel."
-        ],
-        "desktop_updates": [],
-        "download_url": null
-    },
-    {
-        "version": "1.20.8926.40580 (build 15.0.1115.178)",
-        "release_date": "June 10, 2024",
-        "report_server_updates": [
-            "Bug fixes",
-            "Fixed issue related to Office Online Server (OOS) not working as expected."
-        ],
-        "desktop_updates": [],
-        "download_url": null
-    },
-    {
-        "version": "1.20.8910.25479 (build 15.0.1115.165)",
-        "release_date": "May 28, 2024",
-        "report_server_updates": [
-            "Features",
-            "Removed AngularJS remnants",
-            "A recent security change requires a privileged user to apply the \"PBI_SQL_TRUSTED_SERVERS\" environment variable on their Power BI Report Server machine for certain data types. Read more details in the article, [SQL Server certificate isn't trusted on the client](/power-query/connectors/sql-server#sql-server-certificate-isnt-trusted-on-the-client-power-bi-desktop-or-on-premises-data-gateway).",
-            "Custom Visual API shipped with release - version v5.8.0",
-            "Various bug fixes"
-        ],
-        "desktop_updates": [],
-        "download_url": null
+        "download_url": ""
     },
     {
         "version": "2.150.1926.0 (January 2026)",
         "release_date": "January 21, 2026",
         "report_server_updates": [],
         "desktop_updates": [
-            "Support for January 2026 Power BI Report Server."
+            "支援 January 2026 Power BI Report Server。"
         ],
-        "download_url": null
+        "download_url": ""
     },
     {
-        "version": "1.25.9508.3237 (build 15.0.1120.113)",
-        "release_date": "January 21, 2026",
+        "version": "1.24.9466.3830 (build 15.0.1119.121)",
+        "release_date": "December 1, 2025",
         "report_server_updates": [
-            "Added support for SQL Server 2025 Enterprise Core Product ID (key).",
-            "Added new advanced server property 'DisableMSRBConnect' with default value 'True'. This to restricts \"Connected mode\" requests from Microsoft Report Builder.",
-            "Fixed issue with verbose logging causing log file to grow too fast.",
-            "Removed support for Office Online Server (OOS) which allowed web viewing of XLSX workbooks which has been deprecated. [Learn More](https://techcommunity.microsoft.com/blog/officeeos/announcing-the-retirement-for-office-online-server/4462402)",
-            "Accessibility fixes."
+            "新增對 SQL Server 2025 Product ID (金鑰) 的支援。",
+            "新增遙測並更改 Power BI Desktop for RS 上傳檔案過大時的錯誤代碼。",
+            "新增遙測並更改 Power BI Desktop for RS 上傳檔案版本較新時的錯誤代碼。"
         ],
         "desktop_updates": [],
-        "download_url": null
+        "download_url": ""
     },
     {
-        "version": "2.147.1088.0 (September 2025)",
-        "release_date": "September 22, 2025",
+        "version": "2.147.7627.0 (September 2025)",
+        "release_date": "June 11, 2026",
         "report_server_updates": [],
         "desktop_updates": [
-            "Support for September 2025 Power BI Report Server."
+            "更新了驗證程式庫，包含最新的安全性修補程式。"
         ],
-        "download_url": null
+        "download_url": ""
     },
     {
-        "version": "1.24.9392.34333 (build 15.0.1119.107)",
-        "release_date": "September 22, 2025",
+        "version": "2.150.5353.0 (January 2026)",
+        "release_date": "June 11, 2026",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "更新了驗證程式庫，包含最新的安全性修補程式。"
+        ],
+        "download_url": ""
+    },
+    {
+        "version": "1.23.9316.13987 (build 15.0.1118.134)",
+        "release_date": "July 9, 2025",
         "report_server_updates": [
-            "Fixed issue where custom authentication didn't re-authenticate upon cookie expiration",
-            "Fixed issue with exporting Power BI visual to excel caused an error",
-            "Resolved several accessibility issues",
-            "Custom Visual API shipped with release - version v5.10.0",
-            "Security updates"
+            "錯誤修正",
+            "修正了檢視分頁報表時，文件地圖未展開的問題。"
         ],
         "desktop_updates": [],
-        "download_url": null
+        "download_url": ""
     },
     {
         "version": "2.138.6828.0 (January 2025)",
         "release_date": "July 9, 2025",
         "report_server_updates": [],
         "desktop_updates": [
-            "Fix issue with intermittent crashes when using Oracle data in reports."
+            "修正了使用 Oracle 資料製作報表時間歇性當機的問題。"
         ],
-        "download_url": null
+        "download_url": ""
+    },
+    {
+        "version": "1.23.9274.14406 (build 15.0.1118.126)",
+        "release_date": "May 27, 2025",
+        "report_server_updates": [
+            "錯誤修正",
+            "修正了向沒有「管理個別訂閱」和「管理所有訂閱」權限的使用者顯示報表排程重新整理的問題。"
+        ],
+        "desktop_updates": [],
+        "download_url": ""
+    },
+    {
+        "version": "1.23.9273.4705 (build 15.0.1118.125)",
+        "release_date": "May 22, 2025",
+        "report_server_updates": [
+            "功能",
+            "新增新的進階伺服器屬性 EnableCommentsOnReports 並將預設值設為 false 以控制報表上的註解。此功能升級後將停用，若您希望未來能夠註解報表，則必須啟用此功能。此功能現已棄用，將於 2026 年移除。",
+            "自訂視覺效果 API 已隨版本發行 - 版本 v5.10.0",
+            "更新了 PBIRS Portal 和 RDL 轉譯所使用的 jQuery 底層版本至 3.7.1 (PBIX 仍使用 3.5.1 並與 Power BI 服務版本對齊)。",
+            "支援在 RSPortal 記錄中記錄 IP 位址的 x-forwarded-for 標頭。",
+            "新增對從 SSRS 2022 遷移報表伺服器目錄到 Power BI Report Server 的支援。",
+            "錯誤修正",
+            "修正了擴展環境中模型載入的問題。",
+            "修正了 DAX 查詢中註解 \"--\" 的問題。",
+            "修正了訂閱在所有內容載入前即可儲存，從而移除設定的問題。",
+            "在啟用 UI 中的加密設定前，檢查資料來源是否支援加密。",
+            "額外的詳細記錄以協助支援案例。",
+            "額外的螢幕助讀程式對樹狀檢視的支援。"
+        ],
+        "desktop_updates": [],
+        "download_url": ""
+    },
+    {
+        "version": "2.143.954.0 (May 2025)",
+        "release_date": "May 22, 2025",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "支援 May 2025 Power BI Report Server。"
+        ],
+        "download_url": ""
+    },
+    {
+        "version": "1.22.9153.7886 (build 15.0.1117.98)",
+        "release_date": "January 22, 2025",
+        "report_server_updates": [
+            "錯誤修正",
+            "修正了新屬性 'EnableCustomURLInKPI' 在升級期間未正確設定的問題。在先前的組建 (15.0.1117.95) 中，發佈者和內容管理員角色不會將新屬性設定為值，並在存取 /reports 端點時遇到權限錯誤。"
+        ],
+        "desktop_updates": [],
+        "download_url": ""
+    },
+    {
+        "version": "1.22.9137.4867 (build 15.0.1117.95)",
+        "release_date": "January 13, 2025",
+        "report_server_updates": [
+            "功能",
+            "自訂視覺效果 API 已隨版本發行 - 版本 v5.10.0",
+            "更新了 angular 的底層版本。",
+            "新增新的進階伺服器屬性 EnableRefererValidation 並將預設值設為 false。",
+            "新增新的進階伺服器屬性 'EnableCustomURLInKPI'，預設值為 'true'，以控制 KPI 是否可以連結到自訂 URL。",
+            "新增對 PBIX 資料限制功能支援。",
+            "錯誤修正",
+            "修正了還原目錄時 RSExecRole 未獲得正確權限的問題。",
+            "修正了清理快照集時記錄錯誤的問題。",
+            "修正了我們記錄有關先前已移除效能計數器的錯誤。",
+            "修正了資料驅動電子郵件訂閱效能的問題。",
+            "修正了在 RSConfig 工具中變更服務帳戶密碼相關的問題。",
+            "修正了檢視 PBIX 報表時，底層模型已卸載的問題。",
+            "修正了與無障礙功能和螢幕助讀程式相關的問題。"
+        ],
+        "desktop_updates": [],
+        "download_url": ""
+    },
+    {
+        "version": "2.138.2255.0 (January 2025)",
+        "release_date": "January 13, 2025",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "支援 January 2025 Power BI Report Server。"
+        ],
+        "download_url": ""
+    },
+    {
+        "version": "1.21.9032.4573 (build 15.0.1116.121)",
+        "release_date": "September 26, 2024",
+        "report_server_updates": [
+            "功能",
+            "自訂視覺效果 API 已隨版本發行 - 版本 v5.10.0",
+            "更改了預設 SupportedHyperlinkSchemes 進階伺服器屬性值以禁止 JavaScript",
+            "更改了預設 TrustedFileFormat 進階伺服器屬性值以禁止 pdf 內容檢視",
+            "錯誤修正",
+            "修正了 RsPortal 記錄被 401 錯誤填滿的問題",
+            "修正了包含特定字元的資料夾問題",
+            "修正了歷程記錄快照集頁面問題",
+            "修正了管理共用資料來源問題",
+            "修正了 Power BI 報表中 ribbon 圖表問題"
+        ],
+        "desktop_updates": [],
+        "download_url": ""
     },
     {
         "version": "2.136.1202.0 (September 2024)",
         "release_date": "September 26, 2024",
         "report_server_updates": [],
         "desktop_updates": [
-            "Support for September 2024 Power BI Report Server."
+            "支援 September 2024 Power BI Report Server。"
         ],
-        "download_url": null
+        "download_url": ""
     },
     {
-        "version": "2.129.2203.0 (May 2024)",
+        "version": "1.20.8959.12285 (build 15.0.1115.206)",
         "release_date": "July 12, 2024",
-        "report_server_updates": [],
-        "desktop_updates": [
-            "Bug fixes",
-            "Fixed issue with measures not appearing in PBIT with certain data sour"
+        "report_server_updates": [
+            "錯誤修正",
+            "修正了 Power BI 報表中自訂視覺效果初始載入失敗的問題。",
+            "修正了在某些 Power BI 報表中未將樣式套用到 Matrix 視覺效果的問題。",
+            "修正了在 PBIRS 入口網站編輯月度排程時的問題。"
         ],
-        "download_url": null
+        "desktop_updates": [],
+        "download_url": ""
     },
     {
-        "version": "2.129.6228.0 (May 2024)",
+        "version": "1.20.8944.34536 (build 15.0.1115.194)",
+        "release_date": "June 27, 2024",
+        "report_server_updates": [
+            "錯誤修正",
+            "修正了將報表與影像匯出到 Excel 的相關問題。"
+        ],
+        "desktop_updates": [],
+        "download_url": ""
+    },
+    {
+        "version": "1.20.8926.40580 (build 15.0.1115.178)",
+        "release_date": "June 10, 2024",
+        "report_server_updates": [
+            "錯誤修正",
+            "修正了 Office Online Server (OOS) 未如預期運作的相關問題。"
+        ],
+        "desktop_updates": [],
+        "download_url": ""
+    },
+    {
+        "version": "1.20.8910.25479 (build 15.0.1115.165)",
+        "release_date": "May 28, 2024",
+        "report_server_updates": [
+            "功能",
+            "移除了 AngularJS 的殘留元件",
+            "最近的安全變更要求，使用者必須在 Power BI Report Server 電腦上套用 \"PBI_SQL_TRUSTED_SERVERS\" 環境變數，才能使用某些資料類型。請參閱文章 [SQL Server 憑證在用戶端不受信任](/power-query/connectors/sql-server#sql-server-certificate-isnt-trusted-on-the-client-power-bi-desktop-or-on-premises-data-gateway) 以取得更多詳細資訊。",
+            "自訂視覺效果 API 已隨版本發行 - 版本 v5.8.0",
+            "各種錯誤修正"
+        ],
+        "desktop_updates": [],
+        "download_url": ""
+    },
+    {
+        "version": "2.136.3279.0 (September 2024)",
         "release_date": "January 7, 2025",
         "report_server_updates": [],
         "desktop_updates": [
-            "Fix for WebView2 issue."
+            "修正 WebView2 問題。"
         ],
-        "download_url": null
+        "download_url": ""
+    },
+    {
+        "version": "2.147.1088.0 (September 2025)",
+        "release_date": "September 22, 2025",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "支援 September 2025 Power BI Report Server。"
+        ],
+        "download_url": ""
+    },
+    {
+        "version": "1.24.9392.34333 (build 15.0.1119.107)",
+        "release_date": "September 22, 2025",
+        "report_server_updates": [
+            "修正了自訂驗證在 Cookie 過期時未重新驗證的問題",
+            "修正了將 Power BI 視覺效果匯出到 Excel 時發生錯誤的問題",
+            "解決了數個無障礙功能問題",
+            "自訂視覺效果 API 已隨版本發行 - 版本 v5.10.0",
+            "安全性更新"
+        ],
+        "desktop_updates": [],
+        "download_url": ""
+    },
+    {
+        "version": "2.147.1088.0 (September 2025)",
+        "release_date": "March 2, 2026",
+        "report_server_updates": [],
+        "desktop_updates": [
+            "修正了近期本機網路存取限制問題。"
+        ],
+        "download_url": ""
     }
 ]
