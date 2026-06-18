@@ -2,6 +2,15 @@
     "SQL Server 2025": [
         {
             "product": "SQL Server 2025",
+            "full_label": "CU6 for 2025",
+            "version": "17.0.4055.5",
+            "release_date": "June 17, 2026",
+            "kb_article": "KB5093421",
+            "support_status": "Latest cumulative update",
+            "_captured_at": "2026-06-18 13:10:43"
+        },
+        {
+            "product": "SQL Server 2025",
             "full_label": "CU5 for 2025",
             "version": "17.0.4045.5",
             "release_date": "May 20, 2026",
@@ -972,8 +981,8 @@
         }
     ],
     "_metadata": {
-        "sha": "468cd0cf679506f2650fca4ce1c81e29ecd4d4e2",
-        "last_checked": "2026-05-25 01:29:50",
+        "sha": "debb980f7e9910a87fa841933acd762825c15326",
+        "last_checked": "2026-06-18 13:10:43",
         "sort_logic": "Date desc, Version desc"
     }
 }
