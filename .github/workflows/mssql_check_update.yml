@@ -35,18 +35,18 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python mssql_monitor.py
-          date > mssql_heartbeat.txt  # 獨立的 MSSQL 心跳檔
         
       - name: Commit and Push changes
+        if: always()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions[bot]"
-          git add mssql_versions.json mssql_heartbeat.txt
+          git add mssql_versions.json mssql_heartbeat.txt mssql_run.log
           
           # 檢查是否有變動
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Auto-update: MSSQL version info [skip ci]"
+            git commit -m "Auto-update: MSSQL version info and logs [skip ci]"
             git push
           else
-            echo "No changes in mssql_versions.json, skipping push."
+            echo "No changes, skipping push."
           fi

@@ -35,18 +35,18 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python pbirs_monitor.py
-          date > pbirs_heartbeat.txt  # 每次執行都強行寫入當前時間
         
       - name: Commit and Push changes
+        if: always()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions[bot]"
-          git add pbirs_version.json pbirs_heartbeat.txt
+          git add pbirs_version.json pbirs_heartbeat.txt pbirs_run.log
+          
           # 檢查是否有變動，有的話才 commit/push
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Auto-update: PBIRS version info [skip ci]"
-            git commit -m "Heartbeat: $(date) [skip ci]" || echo "No changes to commit"
+            git commit -m "Auto-update: PBIRS version info and logs [skip ci]"
             git push
           else
-            echo "No changes in pbirs_version.json, skipping push."
+            echo "No changes, skipping push."
           fi

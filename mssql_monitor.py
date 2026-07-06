@@ -3,6 +3,7 @@ import base64
 import requests
 import json
 import datetime
+import time
 from google import genai
 from google.genai import types
 
@@ -10,6 +11,43 @@ from google.genai import types
 SQL_API_URL = "https://api.github.com/repos/MicrosoftDocs/SupportArticles-docs/contents/support/sql/releases/download-and-install-latest-updates.md"
 STATE_FILE = "mssql_versions.json"
 GEMINI_KEY = os.getenv("GEMINI_API_KEY")
+LOG_FILE = "mssql_run.log"
+HEARTBEAT_FILE = "mssql_heartbeat.txt"
+
+def write_log(log_file, status, message, max_lines=100):
+    tz_tw = datetime.timezone(datetime.timedelta(hours=8))
+    now = datetime.datetime.now(tz_tw).strftime("%Y-%m-%d %H:%M:%S")
+    log_line = f"[{now}] [{status}] {message}\n"
+    
+    existing_lines = []
+    if os.path.exists(log_file):
+        try:
+            with open(log_file, 'r', encoding='utf-8') as f:
+                existing_lines = f.readlines()
+        except Exception:
+            pass
+            
+    existing_lines.append(log_line)
+    if len(existing_lines) > max_lines:
+        existing_lines = existing_lines[-max_lines:]
+        
+    try:
+        with open(log_file, 'w', encoding='utf-8') as f:
+            f.writelines(existing_lines)
+    except Exception as e:
+        print(f"Failed to write log: {e}")
+
+def write_heartbeat(heartbeat_file):
+    try:
+        utc_now = datetime.datetime.now(datetime.timezone.utc)
+        day = utc_now.strftime("%d")
+        if day.startswith("0"):
+            day = " " + day[1:]
+        formatted = utc_now.strftime(f"%a %b {day} %H:%M:%S UTC %Y\n")
+        with open(heartbeat_file, 'w', encoding='utf-8') as f:
+            f.write(formatted)
+    except Exception as e:
+        print(f"Failed to write heartbeat: {e}")
 
 def parse_ms_date(date_str):
     """
@@ -27,18 +65,22 @@ def parse_ms_date(date_str):
     return datetime.datetime(1900, 1, 1)
 
 def run_sql_monitor():
-    # 修正 DeprecationWarning: 使用 timezone-aware UTC
     tz_tw = datetime.timezone(datetime.timedelta(hours=8))
     now_ts = datetime.datetime.now(tz_tw)
     now = now_ts.strftime("%Y-%m-%d %H:%M:%S")
     
     print(f"[{now}] === 啟動 MSSQL 監控 (僅在有新版本時更新檔案) ===")
 
+    status = "SUCCESS"
+    log_msg = "無新資料"
+
     try:
         # 1. 抓取微軟官方文件
         resp = requests.get(SQL_API_URL)
         if resp.status_code != 200:
-            print(f"[{now}] 錯誤：無法存取 GitHub API")
+            log_msg = f"錯誤：無法存取 GitHub API (HTTP {resp.status_code})"
+            print(f"[{now}] {log_msg}")
+            status = "ERROR"
             return
         
         gh_data = resp.json()
@@ -53,7 +95,8 @@ def run_sql_monitor():
 
         # 3. SHA 比對 - 若 SHA 相同，代表微軟文件根本沒變，直接結束 (不碰 STATE_FILE)
         if db.get("_metadata", {}).get("sha") == current_sha:
-            print(f"[{now}] SHA 未變動，無需執行任何更新。")
+            log_msg = "SHA 未變動，無需執行任何更新。"
+            print(f"[{now}] {log_msg}")
             return
 
         # 4. 呼叫 Gemini 解析
@@ -70,13 +113,29 @@ def run_sql_monitor():
         {md_text[:25000]}
         """
         
-        response = client.models.generate_content(
-            model='gemini-2.5-flash-lite',
-            contents=prompt,
-            config=types.GenerateContentConfig(response_mime_type='application/json', temperature=0.0)
-        )
+        max_retries = 3
+        backoff_factor = 2
+        new_snapshots = None
+        for attempt in range(1, max_retries + 1):
+            try:
+                print(f"[{now}] 呼叫 Gemini API (第 {attempt} 次嘗試)...")
+                response = client.models.generate_content(
+                    model='gemini-3.5-flash',
+                    contents=prompt,
+                    config=types.GenerateContentConfig(response_mime_type='application/json', temperature=0.0)
+                )
+                new_snapshots = json.loads(response.text)
+                break
+            except Exception as e:
+                print(f"[{now}] Gemini API 呼叫失敗 (第 {attempt} 次): {str(e)}")
+                if attempt == max_retries:
+                    raise
+                sleep_time = backoff_factor ** attempt
+                print(f"[{now}] 等待 {sleep_time} 秒後重試...")
+                time.sleep(sleep_time)
         
-        new_snapshots = json.loads(response.text)
+        if new_snapshots is None:
+            raise Exception("未能成功從 Gemini API 取得結果")
 
         # 5. 更新資料庫
         update_count = 0
@@ -95,8 +154,7 @@ def run_sql_monitor():
                 db[p_name].append(entry)
                 update_count += 1
 
-        # 6. 判斷是否寫入檔案 (關鍵修改點)
-        # 只有在 update_count > 0 時，才更新 metadata 排序並寫入檔案
+        # 6. 判斷是否寫入檔案
         if update_count > 0:
             # 強制排序邏輯
             for p_name in list(db.keys()):
@@ -120,14 +178,20 @@ def run_sql_monitor():
             with open(STATE_FILE, 'w', encoding='utf-8') as f:
                 json.dump(db, f, indent=4, ensure_ascii=False)
                 
-            print(f"[{now}] 檢測到新資料！已完成日期排序與存檔，本次新增 {update_count} 筆。")
+            log_msg = f"檢測到新資料！已完成日期排序與存檔，本次新增 {update_count} 筆。"
+            print(f"[{now}] {log_msg}")
         else:
-            # 雖然微軟文件的 SHA 變了（可能只是改了錯字或無關更新），但裡面沒有我們需要的全新 MSSQL 版本 Build 號
-            print(f"[{now}] 雖然 SHA 改變，但解析後未發現全新 SQL 版本資料，放棄寫入檔案。")
+            log_msg = "雖然 SHA 改變，但解析後未發現全新 SQL 版本資料，放棄寫入檔案。"
+            print(f"[{now}] {log_msg}")
 
     except Exception as e:
-        print(f"[{now}] 執行中斷，錯誤原因: {str(e)}")
+        status = "ERROR"
+        log_msg = f"執行中斷，錯誤原因: {str(e)}"
+        print(f"[{now}] {log_msg}")
         raise
+    finally:
+        write_log(LOG_FILE, status, log_msg)
+        write_heartbeat(HEARTBEAT_FILE)
 
 if __name__ == "__main__":
     run_sql_monitor()
