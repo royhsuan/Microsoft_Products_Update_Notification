@@ -1,0 +1,1 @@
+[2026-07-06 09:43:58] [ERROR] 執行中斷，錯誤原因: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
