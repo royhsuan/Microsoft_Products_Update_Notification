@@ -107,14 +107,14 @@ def run_monitor():
         {md_text[:12000]} 
         """
         
-        max_retries = 3
-        backoff_factor = 2
+        max_retries = 5
         new_history = None
         for attempt in range(1, max_retries + 1):
+            curr_time = datetime.datetime.now(tz_tw).strftime("%Y-%m-%d %H:%M:%S")
             try:
-                print(f"[{now}] 呼叫 Gemini API (第 {attempt} 次嘗試)...")
+                print(f"[{curr_time}] 呼叫 Gemini API (第 {attempt} 次嘗試)...")
                 response = client.models.generate_content(
-                    model='gemini-3.5-flash',
+                    model='gemini-3.1-flash-lite',
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         response_mime_type='application/json',
@@ -124,11 +124,12 @@ def run_monitor():
                 new_history = json.loads(response.text)
                 break
             except Exception as e:
-                print(f"[{now}] Gemini API 呼叫失敗 (第 {attempt} 次): {str(e)}")
+                curr_time = datetime.datetime.now(tz_tw).strftime("%Y-%m-%d %H:%M:%S")
+                print(f"[{curr_time}] Gemini API 呼叫失敗 (第 {attempt} 次): {str(e)}")
                 if attempt == max_retries:
                     raise
-                sleep_time = backoff_factor ** attempt
-                print(f"[{now}] 等待 {sleep_time} 秒後重試...")
+                sleep_time = 3 * (2 ** (attempt - 1))
+                print(f"[{curr_time}] 等待 {sleep_time} 秒後重試...")
                 time.sleep(sleep_time)
 
         if new_history is None:
