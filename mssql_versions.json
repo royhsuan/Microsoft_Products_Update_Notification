@@ -2,6 +2,15 @@
     "SQL Server 2025": [
         {
             "product": "SQL Server 2025",
+            "full_label": "CU8",
+            "version": "17.0.4075.5",
+            "release_date": "August 13, 2026",
+            "kb_article": "KB5104822",
+            "support_status": "Supported",
+            "_captured_at": "2026-08-14 11:04:46"
+        },
+        {
+            "product": "SQL Server 2025",
             "full_label": "CU7",
             "version": "17.0.4065.4",
             "release_date": "July 16, 2026",
@@ -448,6 +457,15 @@
         {
             "product": "SQL Server 2019",
             "full_label": "CU32 + GDR",
+            "version": "15.0.4480.2",
+            "release_date": "July 14, 2026",
+            "kb_article": "KB5102335",
+            "support_status": "Supported",
+            "_captured_at": "2026-08-14 11:04:46"
+        },
+        {
+            "product": "SQL Server 2019",
+            "full_label": "CU32 + GDR",
             "version": "15.0.4470.1",
             "release_date": "May 2026",
             "kb_article": "KB5090407",
@@ -510,6 +528,15 @@
         }
     ],
     "SQL Server 2017": [
+        {
+            "product": "SQL Server 2017",
+            "full_label": "CU31 + GDR",
+            "version": "14.0.3540.1",
+            "release_date": "July 14, 2026",
+            "kb_article": "KB5102337",
+            "support_status": "Supported",
+            "_captured_at": "2026-08-14 11:04:46"
+        },
         {
             "product": "SQL Server 2017",
             "full_label": "CU31 + GDR",
@@ -1035,8 +1062,8 @@
         }
     ],
     "_metadata": {
-        "sha": "027c2932d578fc5a9d5b44e1c21557c41f7a3e86",
-        "last_checked": "2026-07-17 11:45:31",
+        "sha": "f5c89cfcc2e613c710e7d26bc31f7336422bbd43",
+        "last_checked": "2026-08-14 11:04:46",
         "sort_logic": "Date desc, Version desc"
     }
 }
