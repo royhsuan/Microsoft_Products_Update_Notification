@@ -1,4 +1,3 @@
-[2026-07-27 23:21:13] [SUCCESS] SHA 未變動，無需執行任何更新。
 [2026-07-28 11:44:18] [SUCCESS] SHA 未變動，無需執行任何更新。
 [2026-07-28 22:57:03] [SUCCESS] SHA 未變動，無需執行任何更新。
 [2026-07-29 11:47:57] [SUCCESS] SHA 未變動，無需執行任何更新。
@@ -98,3 +97,4 @@
 [2026-09-15 02:07:08] [SUCCESS] SHA 未變動，無需執行任何更新。
 [2026-09-15 13:06:02] [SUCCESS] SHA 未變動，無需執行任何更新。
 [2026-09-16 01:11:07] [ERROR] 執行中斷，錯誤原因: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[2026-09-16 13:01:23] [SUCCESS] 檢測到新資料！已完成日期排序與存檔，本次新增 2 筆。
